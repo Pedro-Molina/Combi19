@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
   def index
-  end
-  def logout
-    redirect_to root_path
+    if chofer_signed_in?
+      redirect_to chofer_path
+    end
+    if admin_signed_in?
+      redirect_to admin_path
+    end
+    if not(admin_signed_in?) and not(user_signed_in?) and not(chofer_signed_in?)
+      authenticate_user!
+    end
   end
 end
