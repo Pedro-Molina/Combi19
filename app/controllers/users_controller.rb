@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   def index
+    if user_signed_in?
+      @currentUser=current_user
+    end
     if chofer_signed_in?
       redirect_to chofer_path
     end
