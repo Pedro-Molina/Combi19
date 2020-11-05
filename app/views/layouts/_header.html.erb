@@ -10,7 +10,8 @@
 
           <% if not(user_signed_in?) and not(chofer_signed_in?) and not(admin_signed_in?) %>
             <%= link_to "Iniciar sesion como pasajero", new_user_session_path, class: 'btn btn-primary' %>
-            <%= link_to "Iniciar sesion como chofer", new_chofer_session_path, class: 'btn btn-secondary' %>
+            <%= link_to "Iniciar sesion como chofer", new_chofer_session_path, class: 'btn btn-primary' %>
+            <%= link_to "Registrarse", new_user_registration_path, class: 'btn btn-secondary' %>
           <% end %>
         </div>
         <div class="collapse navbar-collapse">

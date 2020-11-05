@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def index
     if user_signed_in?
       @currentUser=current_user
@@ -13,4 +14,5 @@ class UsersController < ApplicationController
       authenticate_user!
     end
   end
+
 end
