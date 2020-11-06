@@ -12,6 +12,8 @@
             <%= link_to "Iniciar sesion como pasajero", new_user_session_path, class: 'btn btn-primary' %>
             <%= link_to "Iniciar sesion como chofer", new_chofer_session_path, class: 'btn btn-primary' %>
             <%= link_to "Registrarse", new_user_registration_path, class: 'btn btn-secondary' %>
+          <%else%>
+            <%= link_to "Desloagearse",destroy_user_session_path, method: :delete %>
           <% end %>
         </div>
         <div class="collapse navbar-collapse">
