@@ -12,7 +12,7 @@ class ChofersController < ApplicationController
     end
   end
 
-  def new 
+  def new
     @chofer = Chofer.new
   end
 
@@ -20,7 +20,7 @@ class ChofersController < ApplicationController
     @chofer = Chofer.new(params.require(:chofer).permit(:nombre,:password, :email, :apellido, :dni, :telefono))
     if @chofer.save
       redirect_to root_path
-    else 
+    else
       redirect_to :new
     end
   end
