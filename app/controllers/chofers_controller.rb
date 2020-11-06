@@ -11,4 +11,17 @@ class ChofersController < ApplicationController
       authenticate_chofer!
     end
   end
+
+  def new 
+    @chofer = Chofer.new
+  end
+
+  def create
+    @chofer = Chofer.new(params.require(:chofer).permit(:nombre,:password, :email, :apellido, :dni, :telefono))
+    if @chofer.save
+      redirect_to root_path
+    else 
+      redirect_to :new
+    end
+  end
 end

@@ -1,13 +1,19 @@
-<%= form_for @chofer do |f| %>
+<%= form_for(@chofer, url: chofer_registration_path(@chofer), html: {method: "patch"}) do |f| %>
 
+<div class="field">
 <%= f.label :nombre %>
 <%= f.text_field :nombre %>
+</div>
 
+<div class="field">
 <%= f.label :apellido %>
 <%= f.text_field :apellido %>
+</div>
 
+<div class="field">
 <%= f.label :email %>
 <%= f.email_field :email %>
+</div>
 
 <div class="field">
     <%= f.label :password %>
@@ -15,11 +21,22 @@
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+</div>
 
-  <div class="field">
+<div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+</div>
+
+<div class="field">
+<%= f.label :dni %>
+<%= f.text_field :dni %>
+</div>
+
+<div class="field">
+<%= f.label :telefono %>
+<%= f.text_field :telefono %>
+</div>
 
 <%= f.submit 'Guardar' %>
+<% end %>
