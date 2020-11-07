@@ -1,15 +1,8 @@
 class ChofersController < ApplicationController
+  before_action :authenticate_chofer! , except: [:new,:create]
+  before_action :authenticate_admin!, only: [:new,:create]
 
   def index
-    if user_signed_in?
-      redirect_to user_path
-    end
-    if admin_signed_in?
-      redirect_to admin_path
-    end
-    if not(admin_signed_in?) and not(user_signed_in?) and not(chofer_signed_in?)
-      authenticate_chofer!
-    end
   end
 
   def new
@@ -17,11 +10,13 @@ class ChofersController < ApplicationController
   end
 
   def create
-    @chofer = Chofer.new(params.require(:chofer).permit(:nombre,:password, :email, :apellido, :dni, :telefono))
+    byebug
+    @chofer = Chofer.new(params.require(:chofer).permit(:nombre, :password, :email, :apellido, :dni, :telefono))
     if @chofer.save
-      redirect_to root_path
+      redirect_to admin_path
     else
-      redirect_to :new
+      render :new
     end
+    return
   end
 end

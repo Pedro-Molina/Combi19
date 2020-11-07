@@ -1,14 +1,6 @@
 class AdminsController < ApplicationController
+  before_action :authenticate_admin!
 
   def index
-    if user_signed_in?
-      redirect_to user_path
-    end
-    if chofer_signed_in?
-      redirect_to chofer_path
-    end
-    if not(admin_signed_in?) and not(user_signed_in?) and not(chofer_signed_in?)
-      authenticate_admin!
-    end
   end
 end
