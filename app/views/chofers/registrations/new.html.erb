@@ -3,6 +3,30 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "chofers/shared/error_messages", resource: resource %>
 
+  <!--esto es solo para los choferes -->
+
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :apellido %><br />
+    <%= f.text_field :apellido %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dni %><br />
+    <%= f.text_field :dni %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telefono %><br />
+    <%= f.text_field :telefono %>
+  </div>
+
+  <!------------------>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
