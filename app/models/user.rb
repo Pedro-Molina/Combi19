@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :apellido, presence:true
   validates :dni, presence:true, uniqueness:true, length: {minimum: 8, maximum: 8}, numericality: true
   validates :tarjeta, presence:true, length: {minimum: 16, maximum: 16}
+  has_and_belongs_to_many :viaje
 
 
 end
