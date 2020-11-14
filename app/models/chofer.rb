@@ -9,4 +9,6 @@ class Chofer < ApplicationRecord
   validates :dni, presence:true, uniqueness:true, length: {minimum: 8, maximum: 8}, numericality: true
   validates :telefono, presence:true, numericality: true
 
+  has_many :viajes
+
 end

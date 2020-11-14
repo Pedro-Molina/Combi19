@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_14_155329) do
+ActiveRecord::Schema.define(version: 2020_11_14_191102) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -55,6 +55,13 @@ ActiveRecord::Schema.define(version: 2020_11_14_155329) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "insumos", force: :cascade do |t|
+    t.string "nombre"
+    t.float "precio"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "lugars", force: :cascade do |t|
     t.string "ciudad"
     t.datetime "created_at", precision: 6, null: false
@@ -88,7 +95,12 @@ ActiveRecord::Schema.define(version: 2020_11_14_155329) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "camino_id"
+    t.datetime "FechayHora"
+    t.integer "chofer_id"
+    t.integer "combi_id"
     t.index ["camino_id"], name: "index_viajes_on_camino_id"
+    t.index ["chofer_id"], name: "index_viajes_on_chofer_id"
+    t.index ["combi_id"], name: "index_viajes_on_combi_id"
   end
 
 end

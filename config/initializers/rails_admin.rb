@@ -38,4 +38,14 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+  
+  
+
+    # config.model Viaje do
+    #   field :my_field do
+    #     strftime_format do
+    #       '%d-%m-%Y %H:%M:%S'
+    #     end
+    #   end
+    #  end
 end
