@@ -1,7 +1,7 @@
 class CreateLugars < ActiveRecord::Migration[6.0]
   def change
     create_table :lugars do |t|
-      t.string :lugar
+      t.string :ciudad
 
       t.timestamps
     end

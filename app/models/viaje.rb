@@ -1,6 +1,6 @@
 class Viaje < ApplicationRecord
     
-    #has_many :lugars
+    #has_one :lugar
     has_and_belongs_to_many :users
     #has_one :combi
     #has_one :chofer
