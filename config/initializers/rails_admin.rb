@@ -39,13 +39,75 @@ RailsAdmin.config do |config|
     # history_show
   end
   
-  
 
-    # config.model Viaje do
-    #   field :my_field do
-    #     strftime_format do
-    #       '%d-%m-%Y %H:%M:%S'
-    #     end
-    #   end
-    #  end
+   
+  # RailsAdmin.config do |config|
+  #   config.model 'Chofer' do
+  #     object_label_method do
+  #       :custom_label_method
+  #     end
+  #   end
+  #   Chofer.class_eval do
+  #     def custom_label_method
+  #       "Chofer #{self.name}"
+  #     end
+  #   end
+  # end
+
+  RailsAdmin.config do |config|
+    config.model 'Camino' do
+      object_label_method do
+        :custom_label_method
+      end
+    end
+  end
+  
+  RailsAdmin.config do |config|
+     config.model 'Chofer' do
+       object_label_method do
+           :custom_label_method
+        end
+      end
+  end
+
+  RailsAdmin.config do |config|
+    config.model 'Combi' do
+      object_label_method do
+          :custom_label_method
+       end
+     end
+ end
+
+ RailsAdmin.config do |config|
+  config.model 'Lugar' do
+    object_label_method do
+        :custom_label_method
+     end
+   end
+end
+
+RailsAdmin.config do |config|
+  config.model 'Insumo' do
+    object_label_method do
+        :custom_label_method
+     end
+   end
+end
+
+RailsAdmin.config do |config|
+  config.model 'User' do
+    object_label_method do
+        :custom_label_method
+     end
+   end
+end
+
+RailsAdmin.config do |config|
+  config.model 'Viaje' do
+    object_label_method do
+        :custom_label_method
+     end
+   end
+end
+   
 end

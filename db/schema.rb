@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_14_191102) do
+ActiveRecord::Schema.define(version: 2020_11_15_184221) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,6 +28,10 @@ ActiveRecord::Schema.define(version: 2020_11_14_191102) do
     t.string "camino"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "origen_id"
+    t.integer "destino_id"
+    t.index ["destino_id"], name: "index_caminos_on_destino_id"
+    t.index ["origen_id"], name: "index_caminos_on_origen_id"
   end
 
   create_table "chofers", force: :cascade do |t|

@@ -11,4 +11,9 @@ class Chofer < ApplicationRecord
 
   has_many :viajes
 
+
+  def custom_label_method
+    "#{self.nombre}"
+  end
+
 end
