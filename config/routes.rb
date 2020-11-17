@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/chofer', to:'chofers#index'
   devise_for :chofers
   devise_for :admins
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
 
   #resources :chofers
 
