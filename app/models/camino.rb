@@ -1,6 +1,5 @@
 class ValidarLugar < ActiveModel::Validator
 	def validate(aux)
-		byebug
 		if aux[:origen_id].eql? aux[:destino_id]
 			aux.errors.add :base, "El origen y el destino no pueden ser los mismos"
 		end

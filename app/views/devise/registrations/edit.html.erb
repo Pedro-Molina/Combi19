@@ -3,7 +3,7 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-   <!--esto es solo para los users -->
+  <!--esto es solo para los users -->
 
   <div class="field">
     <%= f.label :nombre %><br />
@@ -23,6 +23,11 @@
   <div class="field">
     <%= f.label :tarjeta %><br />
     <%= f.text_field :tarjeta %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Fecha_de_expiracion %><br />
+    <%= f.date_field :FechaExpiracion %>
   </div>
 
   <!------------------>

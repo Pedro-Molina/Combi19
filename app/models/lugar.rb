@@ -9,7 +9,6 @@
 
 class Lugar < ApplicationRecord
 	validates :ciudad, presence: true, uniqueness:true
-	#validates_uniqueness_of :origen, :scope => :destino
 	#validates_with ValidarLugar,field: [:origen, :destino]
 
 	def custom_label_method
