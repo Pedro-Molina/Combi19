@@ -10,12 +10,17 @@ class Chofer < ApplicationRecord
   validates :telefono, presence:true, numericality: true
   validates :email, presence:true, uniqueness:true
   validates :password, presence:true
-
+  validates :password_confirmation, presence:true
+  
   has_many :viajes
 
 
   def custom_label_method
     "#{self.nombre}"
+  end
+
+  rails_admin do
+    exclude_fields :created_at, :updated_at, :remember_created_at, :reset_password_sent_at
   end
 
 end
