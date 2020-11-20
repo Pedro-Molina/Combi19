@@ -12,7 +12,7 @@ class Chofer < ApplicationRecord
   validates :password, presence:true
   validates :password_confirmation, presence:true
   
-  has_many :viajes
+  #has_many :viajes
 
 
   def custom_label_method
