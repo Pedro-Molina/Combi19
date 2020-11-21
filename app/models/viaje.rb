@@ -5,6 +5,8 @@ class Viaje < ApplicationRecord
     belongs_to :chofer
     belongs_to :camino
 
+    validates :chofer_id, uniqueness: { scope: [:camino_id, :FechayHora, :combi_id] }#, message: "must be given please" 
+
     def custom_label_method
 		"Viaje #{self.id}"
     end
