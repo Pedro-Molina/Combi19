@@ -17,12 +17,4 @@ class Lugar < ApplicationRecord
 	def custom_label_method
 		"#{self.ciudad}"
 	end
-
-	def formatoViajeOrigen
-        "#{Lugar.find(Camino.find(viaje.camino_id).origen_id).ciudad} #{Lugar.find(Camino.find(viaje.camino_id).origen_id).provincia}"
-    end
-
-    def formatoViajeDestino
-        "#{Lugar.find(Camino.find(viaje.camino_id).destino_id).ciudad} #{Lugar.find(Camino.find(viaje.camino_id).destino_id).provincia}"
-    end
 end
