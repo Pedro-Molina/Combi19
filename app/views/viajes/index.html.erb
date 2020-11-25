@@ -4,11 +4,20 @@
 
 <% render 'formBuscar' %>
 
-<select class="js-example-basic-single">
-  <% @viaje.each do |viaje| %>
-    <option value="<%= viaje.id %>"><%= viaje.formatoViaje %></option>
-  <% end %>
-</select>
+<%= form_for @viajeSolo do |f| %>
+ <%= f.label 'Elija el viaje' %>
+
+ <select name="viaje" class="js-example-basic-single">
+   <% @viaje.each do |viaje| %>
+     <option value="<%= viaje.id %>"><%= viaje.formatoViaje %></option>
+   <% end %>
+ </select>
+
+ <%= f.submit 'Comprar' %>
+<% end %>
+
+
+
 
 <table class="table">
 	<tr>
