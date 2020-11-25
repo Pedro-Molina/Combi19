@@ -13,18 +13,8 @@ class Viaje < ApplicationRecord
     
     #accepts_nested_attributes_for :camino
 
-    def self.search(search)
-
- 		if search 
-
-    		where('title LIKE ?', "%#{search}%")
-
-  		else
-
-    		scoped
-
-  		end
-
-	end
+    def formatoViaje
+        "#{Lugar.formatoViajeOrigen} - #{Lugar.formatoViajeDestino} - #{Viaje.FechayHora}" # Origen Destino Fecha
+    end
 
 end
