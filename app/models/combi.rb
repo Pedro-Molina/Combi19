@@ -6,6 +6,6 @@ class Combi < ApplicationRecord
 
 
   def custom_label_method
-		"#{self.modelo}"
+		"#{self.patente}"
 	end
 end
