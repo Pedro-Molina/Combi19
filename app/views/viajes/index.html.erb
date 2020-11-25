@@ -1,6 +1,14 @@
+
+
 <h3>Buscar viaje</h3>
 
 <% render 'formBuscar' %>
+
+<select class="js-example-basic-single">
+  <% @viaje.each do |viaje| %>
+    <option value="<%= viaje.id %>"><%= viaje.formatoViaje %></option>
+  <% end %>
+</select>
 
 <table class="table">
 	<tr>
