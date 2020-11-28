@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
   resources :viajes
+  get '/listaViajes', to: 'viajes#listaViajes'
 
   get '/admin/crear_chofer', to: 'chofers#new'
   post '/admin/chofers', to: 'chofers#create'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_21_192139) do
+ActiveRecord::Schema.define(version: 2020_11_28_215900) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 2020_11_21_192139) do
     t.string "dni"
     t.string "tarjeta"
     t.date "FechaExpiracion"
+    t.date "covid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -105,6 +106,7 @@ ActiveRecord::Schema.define(version: 2020_11_21_192139) do
     t.datetime "FechayHora"
     t.integer "chofer_id"
     t.integer "combi_id"
+    t.float "precio"
     t.index ["camino_id"], name: "index_viajes_on_camino_id"
     t.index ["chofer_id"], name: "index_viajes_on_chofer_id"
     t.index ["combi_id"], name: "index_viajes_on_combi_id"
