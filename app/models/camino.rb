@@ -18,4 +18,9 @@ class Camino < ApplicationRecord
 	def custom_label_method
 		"#{self.camino}"
 	end
+
+    rails_admin do
+        exclude_fields :created_at, :updated_at
+    end
+
 end

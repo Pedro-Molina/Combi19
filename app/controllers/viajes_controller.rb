@@ -9,7 +9,6 @@ class ViajesController < ApplicationController
 
 	def update
 		@viaje=Viaje.find(params[:viaje])
-		
 	    if (@viaje.users.where(id:current_user.id).count == 0) #El usuario ya esta en el viaje
 	    	if (@viaje.users.count < Combi.find(@viaje.combi_id).capacidad) #espacio disponible
 				if(current_user.FechaExpiracion > Date.today)
@@ -33,6 +32,6 @@ class ViajesController < ApplicationController
 	end
 
 	def listaViajes 
-		@viaje = current_user.viaje
+		@viaje = current_user.viajes
 	end
 end

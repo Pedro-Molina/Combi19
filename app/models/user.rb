@@ -25,7 +25,9 @@ class User < ApplicationRecord
   validates :FechaExpiracion, presence:true
   validates_with ValidarTarjeta,field: [:FechaExpiracion]
 
-  has_and_belongs_to_many :viaje
+  #has_and_belongs_to_many :viaje
+  has_many :pasajes
+  has_many :viajes, :through => :pasajes
 
   def custom_label_method
 		"#{self.nombre}"

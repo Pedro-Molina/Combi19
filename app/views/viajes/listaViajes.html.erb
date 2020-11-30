@@ -4,6 +4,7 @@
 		<th> Destino </th>
 		<th> Combi </th>
 		<th> Fecha </th>
+		<th> Estado del pasaje </th>
 	</tr>
 
 	<% @viaje.each do |viaje| %>
@@ -14,8 +15,15 @@
                          Super Comoda  
                     <% else %>
                          Normal
-                    <% end %> </td>
+                    <% end %> 
+            </td>
 			<td> <%= viaje.FechayHora.to_formatted_s(:db) %> </td>
+			<td> <% if Pasaje.where(viaje_id:viaje.id, user_id:current_user.id).first.estado %>
+						Pendiente  
+                    <% else %>
+                        Cancelado
+                    <% end %> 
+			</td>
 		</tr>
 	<% end %>
 

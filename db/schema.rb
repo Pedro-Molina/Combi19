@@ -74,6 +74,14 @@ ActiveRecord::Schema.define(version: 2020_11_28_215900) do
     t.string "provincia"
   end
 
+  create_table "pasajes", force: :cascade do |t|
+    t.integer "viaje_id"
+    t.integer "user_id"
+    t.boolean "estado", default: true
+    t.index ["user_id"], name: "index_pasajes_on_user_id"
+    t.index ["viaje_id"], name: "index_pasajes_on_viaje_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -90,13 +98,6 @@ ActiveRecord::Schema.define(version: 2020_11_28_215900) do
     t.date "covid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "users_viajes", id: false, force: :cascade do |t|
-    t.integer "viaje_id"
-    t.integer "user_id"
-    t.index ["user_id"], name: "index_users_viajes_on_user_id"
-    t.index ["viaje_id"], name: "index_users_viajes_on_viaje_id"
   end
 
   create_table "viajes", force: :cascade do |t|
