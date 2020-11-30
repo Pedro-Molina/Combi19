@@ -24,6 +24,10 @@
                         Cancelado
                     <% end %> 
 			</td>
+			<td><% if Pasaje.where(viaje_id:viaje.id, user_id:current_user.id).first.estado %>
+					<%= link_to 'Cancelar' , pasaje_path(Pasaje.where(viaje_id:viaje.id, user_id:current_user.id).first.id), method: :put , :data => {confirm: 'Esta seguro que quiere cancelar el viaje? si faltan menos de 48hs solo se reintegrara el 50%'}, class: 'btn btn-primary' %>
+				<% end %> 
+			</td>
 		</tr>
 	<% end %>
 
@@ -31,4 +35,4 @@
 		<tr> <td colspan="3"> No hay Viajes </td> </tr>
 	<% end %>
 
-</table>
+</table>	
