@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :viajes
   get '/listaViajes', to: 'viajes#listaViajes'
 
+  get '/review', to: 'viajes#review', as: 'edit_review'
+  put '/review', to: 'pasajes#updateReview'
+
   #get '/admin/crear_chofer', to: 'chofers#new'
   post '/admin/chofers', to: 'chofers#create'
   root 'main#default'

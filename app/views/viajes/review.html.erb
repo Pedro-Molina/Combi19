@@ -1,0 +1,30 @@
+
+<%= form_for @pasaje, url: review_path(@pasaje), method: :put do |f| %>
+
+<div class="container-md">
+ <%= f.label 'Deje un comentario y un puntaje: ' %><br/>
+ <%= f.text_area :comentario , class:'cien' %>
+
+ <input type="text" name="accion" value="editado" hidden />
+
+<div id="contenedorStars">
+ <div class="rating">
+   <input type="radio" name="rating" value="5" id="5" <%= if (@pasaje.puntaje==5) then "checked" end %>>
+   <label for="5">☆</label>
+   <input type="radio" name="rating" value="4" id="4" <%= if (@pasaje.puntaje==4) then "checked" end %>>
+   <label for="4">☆</label>
+   <input type="radio" name="rating" value="3" id="3" <%= if (@pasaje.puntaje==3) then "checked" end %>>
+   <label for="3">☆</label>
+   <input type="radio" name="rating" value="2" id="2" <%= if (@pasaje.puntaje==2) then "checked" end %>>
+   <label for="2">☆</label>
+   <input type="radio" name="rating" value="1" id="1" <%= if (@pasaje.puntaje==1) then  "checked" end %>>
+   <label for="1">☆</label>
+ </div>
+ <div>
+
+
+ <%= f.submit 'Enviar' ,class: 'btn btn-success' %>
+ </div>
+<% end %>
+<br/>
+<%= link_to 'Eliminar Reseña' , review_path(:pasaje => {:comentario => ""},:accion => "eliminar",:format => @pasaje.id, :rating => 0), pasaje: @pasaje,method: :put , class: 'btn btn-danger' %>

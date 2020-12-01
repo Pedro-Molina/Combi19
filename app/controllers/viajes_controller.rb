@@ -40,6 +40,13 @@ class ViajesController < ApplicationController
 	    redirect_to viajes_path
 	end
 
+	def review
+    @pasaje=Pasaje.find(params[:format])
+		if not(@pasaje.estado)
+			redirect_to listaViajes_path
+		end
+	end
+
 	def listaViajes
 		@viaje = current_user.viajes
 	end

@@ -5,6 +5,7 @@
 		<th> Combi </th>
 		<th> Fecha </th>
 		<th> Estado del pasaje </th>
+		<th>Estado del viaje </th>
 	</tr>
 
 	<% @viaje.each do |viaje| %>
@@ -12,21 +13,30 @@
 			<td> <%= Lugar.find(Camino.find(viaje.camino_id).origen_id).ciudad %> <%= Lugar.find(Camino.find(viaje.camino_id).origen_id).provincia %> </td>
 			<td> <%= Lugar.find(Camino.find(viaje.camino_id).destino_id).ciudad %> <%= Lugar.find(Camino.find(viaje.camino_id).destino_id).provincia   %> </td>
             <td> <% if Combi.find(viaje.combi_id).super_comoda %>
-                         Super Comoda  
+                         Super Comoda
                     <% else %>
                          Normal
-                    <% end %> 
+                    <% end %>
             </td>
 			<td> <%= viaje.FechayHora.to_formatted_s(:db) %> </td>
 			<td> <% if Pasaje.where(viaje_id:viaje.id, user_id:current_user.id).first.estado %>
-						Pendiente  
+						Activo
                     <% else %>
                         Cancelado
-                    <% end %> 
+                    <% end %>
 			</td>
-			<td><% if Pasaje.where(viaje_id:viaje.id, user_id:current_user.id).first.estado %>
-					<%= link_to 'Cancelar' , pasaje_path(Pasaje.where(viaje_id:viaje.id, user_id:current_user.id).first.id), method: :put , :data => {confirm: 'Esta seguro que quiere cancelar el viaje? si faltan menos de 48hs solo se reintegrara el 50%'}, class: 'btn btn-primary' %>
-				<% end %> 
+			<td>
+        <%= viaje.estado %>
+			</td>
+			<td>
+				<% if Pasaje.where(viaje_id:viaje.id, user_id:current_user.id).first.estado %>
+		  		<% if  viaje.finalizado?%>
+		  			<%= link_to 'Agregar/Editar Reseña' , edit_review_path(Pasaje.where(viaje_id:viaje.id, user_id:current_user.id).first) ,  class: 'btn btn-success' %>
+		  		<% end %>
+					<% if  viaje.pendiente?%>
+		  			<%= link_to 'Cancelar' , pasaje_path(Pasaje.where(viaje_id:viaje.id, user_id:current_user.id).first.id), method: :put , :data => {confirm: 'Esta seguro que quiere cancelar el viaje? si faltan menos de 48hs solo se reintegrara el 50%'}, class: 'btn btn-primary' %>
+		  		<% end %>
+				<% end %>
 			</td>
 		</tr>
 	<% end %>
@@ -35,4 +45,4 @@
 		<tr> <td colspan="3"> No hay Viajes </td> </tr>
 	<% end %>
 
-</table>	
+</table>

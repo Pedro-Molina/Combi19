@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_01_182804) do
+ActiveRecord::Schema.define(version: 2020_12_01_184024) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -78,6 +78,8 @@ ActiveRecord::Schema.define(version: 2020_12_01_182804) do
     t.integer "viaje_id"
     t.integer "user_id"
     t.boolean "estado", default: true
+    t.string "comentario"
+    t.integer "puntaje"
     t.index ["user_id"], name: "index_pasajes_on_user_id"
     t.index ["viaje_id"], name: "index_pasajes_on_viaje_id"
   end
