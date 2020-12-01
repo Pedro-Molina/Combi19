@@ -1,4 +1,5 @@
 class Viaje < ApplicationRecord
+    enum estado: [:pendiente,:activo,:finalizado]
 
     #has_and_belongs_to_many :users
     has_many :pasajes

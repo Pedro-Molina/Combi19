@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_28_215900) do
+ActiveRecord::Schema.define(version: 2020_12_01_182804) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(version: 2020_11_28_215900) do
     t.integer "chofer_id"
     t.integer "combi_id"
     t.float "precio"
+    t.integer "estado", default: 0
     t.index ["camino_id"], name: "index_viajes_on_camino_id"
     t.index ["chofer_id"], name: "index_viajes_on_chofer_id"
     t.index ["combi_id"], name: "index_viajes_on_combi_id"
