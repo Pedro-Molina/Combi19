@@ -1,5 +1,5 @@
 class ViajesController < ApplicationController
-	
+
 	before_action :authenticate_user!
 	def index
     @viajeSolo = Viaje.first
@@ -16,7 +16,7 @@ class ViajesController < ApplicationController
 	    	if ( espacio_disponible < Combi.find(@viaje.combi_id).capacidad) #espacio disponible
 				if(current_user.FechaExpiracion > Date.today)#tarjeta cancelada
 					if((current_user.covid.nil?) or (current_user.covid + 15.days) < @viaje.FechayHora.to_date) #covid
-	    				if (pasaje.nil?) #no compro alguna vez este viaje
+	    				if (pasaje.first.nil?) #no compro alguna vez este viaje
 	    					@viaje.users << User.find(current_user.id)
 							flash[:notice] = "La compra se realizo con exito"
 						else
@@ -40,7 +40,7 @@ class ViajesController < ApplicationController
 	    redirect_to viajes_path
 	end
 
-	def listaViajes 
+	def listaViajes
 		@viaje = current_user.viajes
 	end
 end
