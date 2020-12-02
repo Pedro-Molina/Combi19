@@ -10,7 +10,7 @@ class ChofersController < ApplicationController
   end
 
   def create
-    byebug
+    #byebug
     @chofer = Chofer.new(params.require(:chofer).permit(:nombre, :password, :email, :apellido, :dni, :telefono))
     if @chofer.save
       redirect_to admin_path

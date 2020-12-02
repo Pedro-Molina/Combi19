@@ -2,11 +2,11 @@
 <div class="container-md">
 <h3>Buscar viaje</h3>
 
-<% render 'formBuscar' %>
+
 
 <%= form_for @viajeSolo do |f| %>
- <%= f.label 'Elija el viaje' %><br/>
-
+ <h5>Formato: Origen - Destino - Fecha - Hora </h5>
+ <h6>Ciudad / Provincia </h6>
 
    <select name="viaje" class="js-example-basic-single">
      <% @viaje.each do |viaje| %>
