@@ -2,10 +2,10 @@ class ViajesController < ApplicationController
 
 	before_action :authenticate_user!
 	def index
-    @viajeSolo = Viaje.first
-		@viaje = Viaje.all
-
-    end
+		viajeValido = Viaje.all.where(estado: "pendiente") 
+    @viajeSolo = viajeValido.first
+    @viaje = viajeValido.all
+  end
 
 	def update
 		@viaje=Viaje.find(params[:viaje])
