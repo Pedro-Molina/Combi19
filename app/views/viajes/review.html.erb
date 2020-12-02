@@ -24,7 +24,10 @@
 
 
  <%= f.submit 'Enviar' ,class: 'btn btn-success' %>
+ <%= link_to 'Cancelar', listaViajes_path, class: 'btn btn-light' %>
  </div>
 <% end %>
 <br/>
-<%= link_to 'Eliminar Reseña' , review_path(:pasaje => {:comentario => ""},:accion => "eliminar",:format => @pasaje.id, :rating => 0), pasaje: @pasaje,method: :put , class: 'btn btn-danger' %>
+<% if not(@pasaje.puntaje.nil?) and @pasaje.puntaje > 0 %>
+  <%= link_to 'Eliminar Reseña' , review_path(:pasaje => {:comentario => ""},:accion => "eliminar",:format => @pasaje.id, :rating => 0), pasaje: @pasaje,method: :put , class: 'btn btn-danger' %>
+<% end %>

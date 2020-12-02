@@ -1,18 +1,20 @@
 
-
+<div class="container-md">
 <h3>Buscar viaje</h3>
 
 <% render 'formBuscar' %>
 
 <%= form_for @viajeSolo do |f| %>
- <%= f.label 'Elija el viaje' %>
+ <%= f.label 'Elija el viaje' %><br/>
 
- <select name="viaje" class="js-example-basic-single">
-   <% @viaje.each do |viaje| %>
-     <option value="<%= viaje.id %>"><%= viaje.formatoViaje %></option>
-   <% end %>
- </select>
 
- <%= f.submit 'Comprar' %>
+   <select name="viaje" class="js-example-basic-single">
+     <% @viaje.each do |viaje| %>
+       <option value="<%= viaje.id %>"><%= viaje.formatoViaje %></option>
+     <% end %>
+   </select>
+
+
+ <%= f.submit 'Comprar', class: "btn btn-primary" %>
 <% end %>
-
+</div>
