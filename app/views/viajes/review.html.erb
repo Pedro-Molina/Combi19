@@ -1,5 +1,5 @@
 
-<%= form_for @pasaje, url: review_path(@pasaje), method: :put do |f| %>
+<%= form_for @pasaje, url: updateReview_path(@pasaje), method: :put do |f| %>
 
 <div class="container-md">
  <%= f.label 'Deje un comentario y un puntaje: ' %><br/>
@@ -29,5 +29,5 @@
 <% end %>
 <br/>
 <% if not(@pasaje.puntaje.nil?) and @pasaje.puntaje > 0 %>
-  <%= link_to 'Eliminar Reseña' , review_path(:pasaje => {:comentario => ""},:accion => "eliminar",:format => @pasaje.id, :rating => 0), pasaje: @pasaje,method: :put , class: 'btn btn-danger' %>
+  <%= link_to 'Eliminar Reseña' , updateReview_path(:pasaje => {:comentario => ""},:accion => "eliminar",:format => @pasaje.id, :rating => 0), pasaje: @pasaje,method: :put , class: 'btn btn-danger' %>
 <% end %>

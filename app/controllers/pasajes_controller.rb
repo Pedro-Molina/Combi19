@@ -15,7 +15,14 @@ class PasajesController < ApplicationController
 		accion=params[:accion]
 		comentario=params[:pasaje][:comentario]
 		puntaje=params[:rating]
-		if Pasaje.find(params[:format]).update(comentario: comentario, puntaje: puntaje)
+
+		if (puntaje.nil?)
+			flash[:alert] = "Debe ingresar un puntaje"
+			redirect_to edit_review_path(Pasaje.find(params[:id]))
+			return 
+		end
+
+		if Pasaje.find(params[:id]).update(comentario: comentario, puntaje: puntaje)
 			if accion == "eliminar"
 			  flash[:alert] = "Reseña Eliminada"
 		  else

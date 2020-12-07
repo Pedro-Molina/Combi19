@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   put '/choferViajes/:id', to: 'chofers#editarEstado', as: 'editarEstado'
   get '/listaPasajeros/:id', to: 'chofers#choferPasajeros', as: 'listaPasajeros'
 
-  get '/review', to: 'viajes#review', as: 'edit_review'
-  put '/review', to: 'pasajes#updateReview'
+  get '/review/:id', to: 'viajes#review', as: 'edit_review'
+  put '/review/:id', to: 'pasajes#updateReview',as:'updateReview' 
 
   #get '/admin/crear_chofer', to: 'chofers#new'
   post '/admin/chofers', to: 'chofers#create'
