@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   resources :viajes
   get '/listaViajes', to: 'viajes#listaViajes'
 
+  get '/choferViajes', to: 'chofers#choferViajes'
+  put '/choferViajes/:id', to: 'chofers#editarEstado', as: 'editarEstado'
+  get '/listaPasajeros/:id', to: 'chofers#choferPasajeros', as: 'listaPasajeros'
+
   get '/review', to: 'viajes#review', as: 'edit_review'
   put '/review', to: 'pasajes#updateReview'
 

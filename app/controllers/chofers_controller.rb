@@ -3,6 +3,7 @@ class ChofersController < ApplicationController
   before_action :authenticate_admin!, only: [:new,:create]
 
   def index
+    
   end
 
   def new
@@ -18,5 +19,26 @@ class ChofersController < ApplicationController
       render :new
     end
     return
+  end
+
+  def choferViajes
+		@viaje = Viaje.where(chofer_id: current_chofer.id)
+  end
+  
+  def editarEstado
+    @viaje = Viaje.find(params[:id])
+
+    if (@viaje.pendiente?)
+      @viaje.update(estado:"activo")
+    else
+      if (@viaje.activo?)
+        @viaje.update(estado:"finalizado")
+      end
+    end
+    redirect_to choferViajes_path 
+  end
+
+  def choferPasajeros
+    @pasajeros = Viaje.find(params[:id]).users
   end
 end

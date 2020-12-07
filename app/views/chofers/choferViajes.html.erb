@@ -1,0 +1,35 @@
+<table class="table">
+	<tr>
+		<th> Origen </th>
+		<th> Destino </th>
+		<th> Combi </th>
+		<th> Fecha </th>
+		<th>Estado del viaje </th>
+		<th> Listado de Pasajeros </th>
+	</tr>
+
+	<% @viaje.each do |viaje| %>
+		<tr>
+			<td> <%= Lugar.find(Camino.find(viaje.camino_id).origen_id).ciudad %> <%= Lugar.find(Camino.find(viaje.camino_id).origen_id).provincia %> </td>
+			<td> <%= Lugar.find(Camino.find(viaje.camino_id).destino_id).ciudad %> <%= Lugar.find(Camino.find(viaje.camino_id).destino_id).provincia   %> </td>
+            <td> <% if Combi.find(viaje.combi_id).super_comoda %>
+                         Super Comoda
+                    <% else %>
+                         Normal
+                    <% end %>
+            </td>
+			<td> <%= viaje.FechayHora.to_formatted_s(:db) %> </td>
+			<td>
+				<%= link_to viaje.estado,editarEstado_path(viaje), method: :put, class: 'btn btn-success' %>
+			</td>
+			<td>
+				<%= link_to "Lista de pasajeros",listaPasajeros_path(viaje), class: 'btn btn-success' %>
+			</td>
+		</tr>
+	<% end %>
+
+	<% if @viaje.size == 0 %>
+		<tr> <td colspan="3"> No hay Viajes </td> </tr>
+	<% end %>
+
+</table>

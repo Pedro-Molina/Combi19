@@ -1,0 +1,29 @@
+<table class="table">
+	<tr>
+		<th> Origen </th>
+		<th> Destino </th>
+		<th> Combi </th>
+		<th> Fecha </th>
+		<th>Estado del viaje </th>
+		<th> Listado de Pasajeros </th>
+	</tr>
+
+	<% @pasajeros.each do |pasajero| %>
+        <tr>
+            <td> 
+                <%= pasajero.nombre%>
+            </td>
+            <td> 
+                <%= pasajero.apellido%>
+            </td>
+            <td> 
+                <%= pasajero.dni%>
+            </td>
+		</tr>
+	<% end %>
+
+	<% if @pasajeros.size == 0 %>
+		<tr> <td colspan="3"> No hay pasajeros </td> </tr>
+	<% end %>
+
+</table>
