@@ -75,7 +75,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
      if parametros[:current_password]&.present?
        pass=parametros[:current_password]
      else
-      pass="evagay123444"
+      pass="1234567"
      end
      parametros[:password]=pass
      parametros[:password_confirmation]=pass

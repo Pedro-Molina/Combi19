@@ -3,13 +3,13 @@ class ViajesController < ApplicationController
 	before_action :authenticate_user!
 	def index
 		viajeValido = Viaje.all.where(estado: "pendiente") 
-	@viajeSolo = viajeValido.first
-	if (@viajeSolo.nil?)
-		flash[:alert] = "No existen viajes para comprar"
-		redirect_to user_path
-	end
-    @viaje = viajeValido.all
-  end
+		@viajeSolo = viajeValido.first
+		if (@viajeSolo.nil?)
+			flash[:alert] = "No existen viajes para comprar"
+			redirect_to user_path
+		end
+    	@viaje = viajeValido.all
+  	end
 
 	def update
 		@viaje=Viaje.find(params[:viaje])

@@ -16,14 +16,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :email, presence:true, uniqueness:true
-  validates :password, presence:true
-  validates :password_confirmation, presence:true
+  validates :password, presence:true, on: :create
+  validates :password_confirmation, presence:true, on: :create
+  validates_with ValidarTarjeta,field: [:FechaExpiracion], on: :create
   validates :nombre, presence:true
   validates :apellido, presence:true
   validates :dni, presence:true, uniqueness:true, length: {minimum: 8, maximum: 8}, numericality: true
   validates :tarjeta, presence:true, length: {minimum: 16, maximum: 16}
   validates :FechaExpiracion, presence:true
-  validates_with ValidarTarjeta,field: [:FechaExpiracion]
+  
 
   #has_and_belongs_to_many :viaje
   has_many :pasajes

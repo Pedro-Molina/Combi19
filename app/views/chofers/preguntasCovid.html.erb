@@ -1,0 +1,45 @@
+
+<%= form_with url: actualizarDatos_path(@pasaje), method: :put %>
+
+<h2>En la ultima semana: </h2>
+
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">
+  	<h3>Tuvo fiebre?</h3>
+  	<%= radio_button_tag(:fiebre, 1) %>
+	<%= label_tag("SI") %>
+	<%= radio_button_tag(:fiebre, 0, :require => true) %>
+	<%= label_tag( "NO") %>
+  </li>
+  <li class="list-group-item">
+  	<h3>Tuvo pérdida de gusto y/o olfato?</h3>
+  	<%= radio_button_tag(:perdida, 1) %>
+	<%= label_tag("SI") %>
+	<%= radio_button_tag(:perdida, 0, :require => true) %>
+	<%= label_tag( "NO") %>
+  </li>
+  <li class="list-group-item">
+  	<h3>Tuvo dolor de garganta?</h3>
+  	<%= radio_button_tag(:garganta, 1) %>
+	<%= label_tag("SI") %>
+	<%= radio_button_tag(:garganta, 0, :require => true) %>
+	<%= label_tag( "NO") %>
+  </li>
+  <li class="list-group-item">
+  	<h3>Tuvo dificultad respiratoria?</h3>
+  	<%= radio_button_tag(:respiratoria, 1) %>
+	<%= label_tag("SI") %>
+	<%= radio_button_tag(:respiratoria, 0, :require => true) %>
+	<%= label_tag( "NO") %>
+  </li>
+  <li class="list-group-item">
+  	<h3>Su temperatura es:</h3>
+  	<%= radio_button_tag(:temperatura, 1) %>
+	<%= label_tag("Mayor que 37°") %>
+	<br>
+	<%= radio_button_tag(:temperatura, 0, :require => true) %>
+	<%= label_tag( "Menor que 37°") %>
+  </li>
+</ul>
+
+ <%= submit_tag("Enviar") %>

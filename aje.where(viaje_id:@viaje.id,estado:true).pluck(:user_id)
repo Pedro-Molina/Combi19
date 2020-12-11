@@ -1,0 +1,181 @@
+********************************* 1. row *********************************
+                    id: 1
+                 email: carlos2@gmail.com
+    encrypted_password: $2a$12$9X31KxgVeFVjEETnt4lDKux401ZrJBqhiq0y61S1mqBtybdUIAHGC
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+            created_at: 2020-11-08 20:08:45 UTC
+            updated_at: 2020-11-30 18:02:37 UTC
+                nombre: Carlos
+              apellido: fsdfsdf
+                   dni: 42428923
+               tarjeta: 1234567890123456
+       FechaExpiracion: 2020-12-05
+                 covid: 
+********************************* 2. row *********************************
+                    id: 2
+                 email: evaristogaston@gmail.com
+    encrypted_password: $2a$12$1jHeq9MtP5BKy9Z3GduX0uQ/3xAAAupHZ041x3RI75T.1IYWyL.rK
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+            created_at: 2020-11-08 20:14:21 UTC
+            updated_at: 2020-12-01 18:00:27 UTC
+                nombre: Carlos
+              apellido: fsdfsdf
+                   dni: 42428921
+               tarjeta: 1234567890123456
+       FechaExpiracion: 2020-12-05
+                 covid: 2020-11-02
+********************************* 3. row *********************************
+                    id: 3
+                 email: evaristsdaogaston@gmail.com
+    encrypted_password: $2a$12$YtuPPfIEy/613geCRyJSlOVF99gCEg8BjZY.esMeG1ccIJ52QW2KW
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+            created_at: 2020-11-09 17:47:21 UTC
+            updated_at: 2020-11-09 17:47:21 UTC
+                nombre: Carlos
+              apellido: fsdfsdf
+                   dni: 42428920
+               tarjeta: 1234567890123456
+       FechaExpiracion: 
+                 covid: 
+********************************* 4. row *********************************
+                    id: 4
+                 email: carlos2sdf@gmail.com
+    encrypted_password: $2a$12$PvTEuovrdeadCqsraCe25euUIk03HXVP2he3CNBdjtM58y3/ADawi
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+            created_at: 2020-11-17 16:36:46 UTC
+            updated_at: 2020-11-17 16:36:46 UTC
+                nombre: bfgbdfgbdfb
+              apellido: ascaca
+                   dni: 42428934
+               tarjeta: 1234567890123456
+       FechaExpiracion: 
+                 covid: 
+********************************* 5. row *********************************
+                    id: 5
+                 email: evaristogafsdston@gmail.com
+    encrypted_password: $2a$12$x6tavA5ReGTjrqN3Nd6pUurBlYkmKxfo.mcP6GiwAQxyBzUtDFi/u
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+            created_at: 2020-11-17 16:40:48 UTC
+            updated_at: 2020-11-17 16:40:48 UTC
+                nombre: Carlos
+              apellido: fsdfsdf
+                   dni: 42428929
+               tarjeta: 1234567890123456
+       FechaExpiracion: 
+                 covid: 
+********************************* 6. row *********************************
+                    id: 6
+                 email: carlosasd2@gmail.com
+    encrypted_password: $2a$12$G6Qje7TyTgFFZS3kY4FEbOBiyc6MO/B2FW/FsokIcpqWHSyMOaoai
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+            created_at: 2020-11-17 16:58:11 UTC
+            updated_at: 2020-11-17 16:58:11 UTC
+                nombre: bfgbdfgbdfb
+              apellido: fsdfsdf
+                   dni: 42348923
+               tarjeta: 1234567890123456
+       FechaExpiracion: 
+                 covid: 
+********************************* 7. row *********************************
+                    id: 7
+                 email: evarifsdfstogaston@gmail.com
+    encrypted_password: $2a$12$wQRIAf//oSStJJ5T5oBhGe5a9v.Ncgv4hqE8dhjA3EwuWlheQ6dZC
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+            created_at: 2020-11-17 21:00:35 UTC
+            updated_at: 2020-11-17 21:00:35 UTC
+                nombre: Carlos12
+              apellido: fsdfsdf
+                   dni: 42422343
+               tarjeta: 1234567890123456
+       FechaExpiracion: 
+                 covid: 
+********************************* 8. row *********************************
+                    id: 8
+                 email: carlosasda2@gmail.com
+    encrypted_password: $2a$12$DE3uitA57gbgXw7WM5oF..eWspLWQUOMD9A/Eojwl7/6DIePNA942
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+            created_at: 2020-11-17 21:08:20 UTC
+            updated_at: 2020-11-17 21:08:20 UTC
+                nombre: bfgbdfgbdfb
+              apellido: fsdfsdf
+                   dni: 42422345
+               tarjeta: 1234567890123456
+       FechaExpiracion: 2020-10-29
+                 covid: 
+********************************* 9. row *********************************
+                    id: 9
+                 email: evaristogasdaston@gmail.com
+    encrypted_password: $2a$12$nZ.uWA1PBLtRXslwaCfVDeNYSrfzCqzpTJpiEM/NQN7wbI27qkXSO
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+            created_at: 2020-11-17 21:14:19 UTC
+            updated_at: 2020-11-17 21:14:19 UTC
+                nombre: Carlos
+              apellido: fsdfsdf
+                   dni: 42428345
+               tarjeta: 1234567890123456
+       FechaExpiracion: 2020-11-02
+                 covid: 
+********************************* 10. row *********************************
+                    id: 10
+                 email: evaristogascaaston@gmail.com
+    encrypted_password: $2a$12$N1nGmOYKjHGoGnvWE3BW8e4Cm8wU2Im3NUTtwiEC1pmG3su08FlwS
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+            created_at: 2020-11-18 00:23:15 UTC
+            updated_at: 2020-11-18 00:23:15 UTC
+                nombre: bfgbdfgbdfb
+              apellido: ascaca
+                   dni: 22428923
+               tarjeta: 1234567890123456
+       FechaExpiracion: 2020-11-27
+                 covid: 
+********************************* 11. row *********************************
+                    id: 11
+                 email: evaristogasasdton@gmail.com
+    encrypted_password: $2a$12$sZbDkcdroo3wpDEZki8Ic.3WeuZVwAWvSbYQUe81SD83n4je0I5EK
+  reset_password_token: 
+reset_password_sent_at: 2020-11-17 21:37:00 UTC
+   remember_created_at: 2020-11-17 21:37:00 UTC
+            created_at: 2020-11-18 00:38:13 UTC
+            updated_at: 2020-11-18 00:38:13 UTC
+                nombre: Carlos
+              apellido: ascaca
+                   dni: 42238923
+               tarjeta: 1234567890abc456
+       FechaExpiracion: 2020-11-27
+                 covid: 
+********************************* 12. row *********************************
+                    id: 12
+                 email: carloadas2@gmail.com
+    encrypted_password: $2a$12$I06T/Tn.zGJalAhsgh326O21xi0qVcZdO1VYI1p6/y.uFdOwd4W46
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+            created_at: 2020-11-18 00:39:31 UTC
+            updated_at: 2020-11-18 00:39:31 UTC
+                nombre: Carlos2
+              apellido: ascaca
+                   dni: 42928923
+               tarjeta: 1234567890abc456
+       FechaExpiracion: 2020-11-28
+                 covid: 
+12 rows in set

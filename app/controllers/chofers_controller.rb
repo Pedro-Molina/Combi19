@@ -39,6 +39,34 @@ class ChofersController < ApplicationController
   end
 
   def choferPasajeros
-    @pasajeros = Viaje.find(params[:id]).users
+    @viaje = Viaje.find(params[:id])
+     userId = Pasaje.where(viaje_id:@viaje.id,estado:true).pluck(:user_id) #usuarios del viaje que no lo cancelaron
+     @pasajeros = User.where(id:userId) 
   end
+
+  def preguntasCovid
+    @pasaje = Pasaje.find(params[:id])
+  end
+
+  def actualizarDatos
+    
+    condicion = params[:perdida].to_i+params[:garganta].to_i+params[:respiratoria].to_i+params[:temperatura].to_i+params[:fiebre].to_i
+    pasaje = Pasaje.find(params[:id])
+    if (params[:temperatura] == "1") or  (condicion > 1)
+      usuario = User.find(pasaje.user_id)
+      usuario.update(covid: Date.today)      #acualizo la fecha del usuario para que no pueda comprar
+      
+      fechaLimite = Date.today + 15.days
+      viajes = usuario.viajes.where(FechayHora: Date.today..fechaLimite)
+      pasajes = Pasaje.where(user_id:usuario,viaje_id:viajes).where.not(id: pasaje)
+      pasajes.update_all(estado:false)      #cancelo los demas viajes pendientes que tenia el usuario
+
+      pasaje.update(covid: true)            #aparece como rechazado en el viaje
+
+    else
+      pasaje.update(covid: false)           #aparece como aceptado en el viaje
+    end
+    redirect_to listaPasajeros_path(Viaje.find(pasaje.viaje_id))
+  end
+
 end

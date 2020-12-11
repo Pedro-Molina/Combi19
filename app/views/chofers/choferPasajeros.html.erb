@@ -1,11 +1,9 @@
 <table class="table">
 	<tr>
-		<th> Origen </th>
-		<th> Destino </th>
-		<th> Combi </th>
-		<th> Fecha </th>
-		<th>Estado del viaje </th>
-		<th> Listado de Pasajeros </th>
+		<th> Nombre </th>
+		<th> Apellido </th>
+		<th> DNI </th>
+		<th>Covid</th>
 	</tr>
 
 	<% @pasajeros.each do |pasajero| %>
@@ -18,6 +16,19 @@
             </td>
             <td> 
                 <%= pasajero.dni%>
+            </td>
+            <td>
+            	<% pasaje = Pasaje.where(viaje_id:@viaje, user_id:pasajero.id).first %>
+            	<% if pasaje.covid.nil? %>
+
+            		<%= link_to 'Preguntas Covid', preguntasCovid_path(pasaje) , class: 'btn btn-danger' %>
+
+            		<% elsif pasaje.covid %>
+            				<p class="btn btn-danger" > Rechazado </p>
+							
+                   		<% else %>
+                        	<p class="btn btn-success"> Aceptado </p>
+                <% end %>
             </td>
 		</tr>
 	<% end %>
