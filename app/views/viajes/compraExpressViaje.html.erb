@@ -1,0 +1,18 @@
+
+<div class="container-md">
+<h3>Buscar viaje</h3>
+
+<%= form_for @viajeSolo, url: expressUpdate_path(@viajeSolo), method: :put do |f| %>
+ <h5>Formato: Origen - Destino - Fecha - Hora </h5>
+ <h6>Ciudad / Provincia </h6>
+
+   <select name="viaje" class="js-example-basic-single">
+     <% @viaje.each do |viaje| %>
+       <option value="<%= viaje.id %>"><%= viaje.formatoViaje %></option>
+     <% end %>
+   </select>
+
+
+ <%= f.submit 'Comprar', class: "btn btn-primary" %>
+<% end %>
+</div>

@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :viajes
   get '/listaViajes', to: 'viajes#listaViajes'
 
+  get '/compraExpressViaje', to: 'viajes#compraExpressViaje', as: 'compraExpressViaje'
+  put '/compraExpressViaje/:id', to: 'viajes#expressUpdate', as: 'expressUpdate'
+
   get '/choferViajes', to: 'chofers#choferViajes'
   put '/choferViajes/:id', to: 'chofers#editarEstado', as: 'editarEstado'
   get '/listaPasajeros/:id', to: 'chofers#choferPasajeros', as: 'listaPasajeros'
@@ -18,7 +21,7 @@ Rails.application.routes.draw do
   put '/actualizarDatos/:id', to: 'chofers#actualizarDatos', as: 'actualizarDatos'
 
   get '/review/:id', to: 'viajes#review', as: 'edit_review'
-  put '/review/:id', to: 'pasajes#updateReview',as:'updateReview' 
+  put '/review/:id', to: 'pasajes#updateReview',as:'updateReview'
 
   get '/registroExpress', to: 'users#registroExpress', as: 'registroExpress'
   post '/crearExpress', to: 'users#crearExpress', as: 'crearExpress'

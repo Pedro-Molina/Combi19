@@ -1,6 +1,6 @@
 <header>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
+      <div class="container-fluid">
         <div class="navbar-header">
 
 
@@ -8,7 +8,7 @@
             <%= image_tag "combi19.png", title: "Logo", class: "logo w-25 pr-3" %>
             Combi19
           <% end %>
- 
+
           <% if not(user_signed_in?) and not(chofer_signed_in?) and not(admin_signed_in?) %>
             <%= link_to "Iniciar sesion como pasajero", new_user_session_path, class: 'btn btn-primary' %>
             <%= link_to "Iniciar sesion como chofer", new_chofer_session_path, class: 'btn btn-primary' %>
@@ -17,7 +17,6 @@
           <%else%>
             <%= link_to "Desloguearse",destroy_user_session_path, method: :delete %>
           <% end %>
-        </div>
         <div class="collapse navbar-collapse">
 
         </div><!--/.nav-collapse -->

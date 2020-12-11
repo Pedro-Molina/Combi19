@@ -1,18 +1,30 @@
-<h2>Registrarse</h2>
+<div class="container-md">
+  <h2>Registro Express | Pasajero </h2>
 
 <%= form_for @user, url: crearExpress_path(@user), method: :post do |f| %>
 
-  <div class="field">
-    <%= f.label :dni %><br />
-    <%= f.text_field :dni %>
-  </div>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <li><%=message%></li>
+
+    <%end%>
+  </ul>
+
+    <div class="field mb-3">
+      <%= f.label :dni, class:'form-label' %>
+      <br/>
+      <%= f.text_field :dni , class:'form-control'%>
+    </div>
+
+  <div class="field mb-3">
+    <%= f.label :email, class:'form-label' %>
+    <br/>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" , class:'form-control'%>
   </div>
 
   <div class="actions">
-    <%= f.submit "Registrarse" %>
+    <%= f.submit "Registrarse", class:'btn btn-primary' %>
   </div>
 <% end %>
+</div>
