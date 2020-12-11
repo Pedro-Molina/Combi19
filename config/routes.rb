@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   get '/review/:id', to: 'viajes#review', as: 'edit_review'
   put '/review/:id', to: 'pasajes#updateReview',as:'updateReview' 
 
+  get '/registroExpress', to: 'users#registroExpress', as: 'registroExpress'
+  post '/crearExpress', to: 'users#crearExpress', as: 'crearExpress'
+
   #get '/admin/crear_chofer', to: 'chofers#new'
   post '/admin/chofers', to: 'chofers#create'
   root 'main#default'

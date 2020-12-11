@@ -1,0 +1,18 @@
+<h2>Registrarse</h2>
+
+<%= form_for @user, url: crearExpress_path(@user), method: :post do |f| %>
+
+  <div class="field">
+    <%= f.label :dni %><br />
+    <%= f.text_field :dni %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Registrarse" %>
+  </div>
+<% end %>
