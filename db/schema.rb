@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_09_185231) do
+ActiveRecord::Schema.define(version: 2020_12_13_210558) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 2020_12_09_185231) do
     t.integer "destino_id"
     t.index ["destino_id"], name: "index_caminos_on_destino_id"
     t.index ["origen_id"], name: "index_caminos_on_origen_id"
+  end
+
+  create_table "carritos", force: :cascade do |t|
+    t.integer "pasaje_id"
+    t.integer "insumo_id"
+    t.integer "cantidad", default: 1
+    t.index ["insumo_id"], name: "index_carritos_on_insumo_id"
+    t.index ["pasaje_id"], name: "index_carritos_on_pasaje_id"
   end
 
   create_table "chofers", force: :cascade do |t|

@@ -6,6 +6,7 @@
 		<th> Fecha </th>
 		<th> Estado del pasaje </th>
 		<th>Estado del viaje </th>
+		<th> Insumos </th>
 	</tr>
 
 	<% @viaje.each do |viaje| %>
@@ -18,16 +19,28 @@
                          Normal
                     <% end %>
             </td>
-			<td> <%= viaje.FechayHora.to_formatted_s(:db) %> </td>
-			<td> <% if Pasaje.where(viaje_id:viaje.id, user_id:current_user.id).first.estado %>
+			<td> 
+				<%= viaje.FechayHora.to_formatted_s(:db) %> 
+			</td>
+			<td> <% if Pasaje.where(viaje_id:viaje.id, user_id:current_user.id).first.estado and !(Pasaje.where(viaje_id:viaje.id, user_id:current_user.id).first.covid)%>
 						Activo
                     <% else %>
                         Cancelado
                     <% end %>
 			</td>
 			<td>
-        <%= viaje.estado %>
+        		<%= viaje.estado %>
 			</td>
+
+			<td>
+				
+				<% if Pasaje.where(viaje_id:viaje.id, user_id:current_user.id).first.estado and !(Pasaje.where(viaje_id:viaje.id, user_id:current_user.id).first.covid)%>
+					<% if  viaje.pendiente?%>
+		  				<%= link_to 'Insumos' , listaInsumos_path(Pasaje.where(viaje_id:viaje.id, user_id:current_user.id).first) ,  class: 'btn btn-success' %>
+		  			<% end %>
+				<% end %>
+			</td>
+
 			<td>
 				<% if Pasaje.where(viaje_id:viaje.id, user_id:current_user.id).first.estado and !(Pasaje.where(viaje_id:viaje.id, user_id:current_user.id).first.covid)%>
 		  		<% if  viaje.finalizado?%>

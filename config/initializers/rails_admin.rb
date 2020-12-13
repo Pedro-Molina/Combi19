@@ -110,4 +110,13 @@ RailsAdmin.config do |config|
    end
 end
 
+RailsAdmin.config do |config|
+  config.excluded_models << Pasaje
+
+end
+
+RailsAdmin.config do |config|
+  config.excluded_models << Carrito
+end
+
 end

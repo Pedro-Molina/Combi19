@@ -26,6 +26,10 @@ Rails.application.routes.draw do
   get '/registroExpress', to: 'users#registroExpress', as: 'registroExpress'
   post '/crearExpress', to: 'users#crearExpress', as: 'crearExpress'
 
+  get '/insumos/:id', to: 'insumos#listaInsumos', as: 'listaInsumos'
+  put '/compraInsumos/:id', to: 'insumos#compraInsumos', as: 'compraInsumos'
+  put '/devolucionInsumo/:id', to: 'insumos#devolucionInsumo', as: 'devolucionInsumo'
+
   #get '/admin/crear_chofer', to: 'chofers#new'
   post '/admin/chofers', to: 'chofers#create'
   root 'main#default'

@@ -1,0 +1,46 @@
+<table class="table">
+	<tr>
+		<th> Nombre </th>
+		<th> Precio </th>
+		<th> Descripcion </th>
+		<th> Compra </th>
+		<th> Cantidad comprada </th>
+		<th> Cancelar una Compra </th>
+	</tr>
+
+	<% @insumos.each do |insumo| %>
+		
+		<tr>
+			<% carrito =  Carrito.where(pasaje_id:@pasaje.id, insumo_id:insumo.id).first %>
+			<td>
+				<%= insumo.nombre %>
+			</td>
+			<td>
+				<%= insumo.precio %>
+			</td>
+			<td>
+				<%= insumo.descripcion %>
+			</td>
+			<td>
+				 <%= link_to 'Comprar' , compraInsumos_path(@pasaje,insumo), method: :put ,  class: 'btn btn-success' %>
+			</td>
+			<td>
+				<% if not carrito.nil? %>
+				 	<%= carrito.cantidad %>
+				<%else%>
+					<p> 0 </p>
+				<%end%>
+			</td>
+			<td>
+				<% if not carrito.nil? %>
+					<%= link_to 'Devolucion' , devolucionInsumo_path(@pasaje,insumo), method: :put ,  class: 'btn btn-warning' %>
+				<%end%>
+			</td>
+		</tr>
+	<% end %>
+
+	<% if @insumos.size == 0 %>
+		<tr> <td colspan="3"> No hay insumos para comprar </td> </tr>
+	<% end %>
+
+</table>
