@@ -1,0 +1,46 @@
+********************************* 1. row *********************************
+                    id: 2
+                 email: evaristogaston@gmail.com
+    encrypted_password: $2a$12$8jNjLqY3cCsvxLaEqDkqa.ayRShOyPvI8jALiaE2vj9nVfx.ORYXW
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+            created_at: 2020-11-08 20:14:21 UTC
+            updated_at: 2020-12-15 13:51:39 UTC
+                nombre: Evaristo
+              apellido: Compagnucci
+                   dni: 42428921
+               tarjeta: 1234567890123456
+       FechaExpiracion: 2021-04-03
+                 covid: 2020-12-11
+********************************* 2. row *********************************
+                    id: 3
+                 email: tarjetaexpirada@gmail.com
+    encrypted_password: $2a$12$5BYmqASPHFbfByAOHe0da.He9kghKt.jX.u5ouediPD91.Rgeg89y
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+            created_at: 2020-12-15 13:02:29 UTC
+            updated_at: 2020-12-15 13:02:54 UTC
+                nombre: Tarjeta Expirada
+              apellido: Gomez
+                   dni: 42411923
+               tarjeta: 1234567890123456
+       FechaExpiracion: 2020-12-01
+                 covid: 2020-09-07
+********************************* 3. row *********************************
+                    id: 4
+                 email: coviduser@gmail.com
+    encrypted_password: $2a$12$Z6pqnzuqB3xQU28GH1bDDeDQH6G6Qd/hHc64fxMLIgMjpQNBVE9Ni
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+            created_at: 2020-12-15 13:04:10 UTC
+            updated_at: 2020-12-15 13:04:10 UTC
+                nombre: covid
+              apellido: User
+                   dni: 97428923
+               tarjeta: 1234567890123456
+       FechaExpiracion: 2021-01-10
+                 covid: 2020-12-15
+3 rows in set

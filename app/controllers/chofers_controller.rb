@@ -22,7 +22,7 @@ class ChofersController < ApplicationController
   end
 
   def choferViajes
-		@viaje = Viaje.where(chofer_id: current_chofer.id)
+		@viaje = Viaje.where(chofer_id: current_chofer.id).order(:FechayHora)
   end
 
   def editarEstado

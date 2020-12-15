@@ -21,7 +21,7 @@
             	<% pasaje = Pasaje.where(viaje_id:@viaje, user_id:pasajero.id).first %>
             	<% if pasaje.covid.nil? %>
 
-            		<%= link_to 'Preguntas Covid', preguntasCovid_path(pasaje) , class: 'btn btn-danger' %>
+            		<%= link_to 'Preguntas Covid', preguntasCovid_path(pasaje) , class: 'btn btn-warning' %>
 
             		<% elsif pasaje.covid %>
             				<p class="btn btn-danger" > Rechazado </p>

@@ -29,5 +29,5 @@
 <% end %>
 <br/>
 <% if not(@pasaje.puntaje.nil?) and @pasaje.puntaje > 0 %>
-  <%= link_to 'Eliminar Reseña' , updateReview_path(:pasaje => {:comentario => ""},:accion => "eliminar",:format => @pasaje.id, :rating => 0), pasaje: @pasaje,method: :put , class: 'btn btn-danger' %>
+  <%= link_to 'Eliminar Reseña' , updateReview_path(:pasaje => {:comentario => ""},:accion => "eliminar",:format => @pasaje.id, :rating => @pasaje.puntaje), pasaje: @pasaje,method: :put , class: 'btn btn-danger' %>
 <% end %>

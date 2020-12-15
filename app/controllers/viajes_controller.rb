@@ -91,6 +91,6 @@ class ViajesController < ApplicationController
 	end
 
 	def listaViajes
-		@viaje = current_user.viajes
+		@viaje = current_user.viajes.order(:FechayHora)
 	end
 end
